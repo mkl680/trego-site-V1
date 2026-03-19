@@ -36,7 +36,6 @@ function Carousel() {
   const slides = [
     {
       bg: "linear-gradient(135deg,#1e3a5f,#2563EB)",
-      title: "Carte NFC Métal",
       text: "Remplacez définitivement vos cartes papier par une carte métal qui ne finit jamais à la poubelle",
       visual: (
         <div style={{width:"220px",height:"135px",background:"rgba(255,255,255,0.15)",borderRadius:"12px",border:"1px solid rgba(255,255,255,0.3)",display:"flex",flexDirection:"column",justifyContent:"space-between",padding:"16px",marginBottom:"32px"}}>
@@ -50,7 +49,6 @@ function Carousel() {
     },
     {
       bg: "linear-gradient(135deg,#0891b2,#06b6d4)",
-      title: "Flyers NFC",
       text: "Distribuez en salon et modifiez votre contenu après impression",
       visual: (
         <div style={{width:"140px",height:"200px",background:"rgba(255,255,255,0.15)",borderRadius:"8px",border:"1px solid rgba(255,255,255,0.3)",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",marginBottom:"32px",gap:"12px",padding:"16px"}}>
@@ -63,7 +61,6 @@ function Carousel() {
     },
     {
       bg: "linear-gradient(135deg,#7c3aed,#a855f7)",
-      title: "Bracelets NFC",
       text: "Réinventez l'expérience de vos participants",
       visual: (
         <div style={{width:"200px",height:"64px",background:"rgba(255,255,255,0.15)",borderRadius:"32px",border:"1px solid rgba(255,255,255,0.3)",display:"flex",alignItems:"center",justifyContent:"center",marginBottom:"32px",gap:"12px",padding:"0 24px"}}>
@@ -98,7 +95,7 @@ function Carousel() {
       </div>
       <div style={{display:"flex",justifyContent:"center",gap:"8px",marginTop:"20px"}}>
         {slides.map((_, i) => (
-          <button key={i} onClick={() => setCurrent(i)} style={{width: i === current ? "32px" : "8px",height:"4px",background: i === current ? "#2563EB" : "#CBD5E1",borderRadius:"2px",border:"none",cursor:"pointer",transition:"all 0.3s",padding:0}}></button>
+          <button key={i} onClick={() => setCurrent(i)} style={{width:i === current ? "32px" : "8px",height:"4px",background:i === current ? "#2563EB" : "#CBD5E1",borderRadius:"2px",border:"none",cursor:"pointer",transition:"all 0.3s",padding:0}}></button>
         ))}
       </div>
     </div>
@@ -109,6 +106,7 @@ export default function Home() {
   return (
     <div style={{minHeight:"100vh",background:"white"}}>
 
+      {/* HERO */}
       <div style={{paddingTop:"120px",paddingBottom:"80px",maxWidth:"1152px",margin:"0 auto",padding:"120px 24px 80px",display:"flex",flexWrap:"wrap",alignItems:"center",gap:"48px"}}>
         <div style={{flex:1,minWidth:"300px"}}>
           <span style={{display:"inline-block",background:"#DBEAFE",color:"#2563EB",fontSize:"14px",fontWeight:500,padding:"4px 16px",borderRadius:"999px",marginBottom:"24px"}}>
@@ -120,29 +118,13 @@ export default function Home() {
           <p style={{fontSize:"18px",color:"#64748B",marginBottom:"32px",maxWidth:"560px"}}>
             TREGO connecte vos cartes, flyers et bracelets à internet via NFC. Modifiez votre contenu à distance, en temps réel.
           </p>
-          <div style={{display:"flex",gap:"16px",flexWrap:"wrap",marginBottom:"40px"}}>
+          <div style={{display:"flex",gap:"16px",flexWrap:"wrap"}}>
             <Link href="/contact" style={{background:"#2563EB",color:"white",padding:"16px 32px",borderRadius:"999px",fontWeight:600,textDecoration:"none",display:"inline-block",boxShadow:"0 4px 14px rgba(37,99,235,0.4)"}}>
               Réserver une démo gratuite
             </Link>
             <Link href="/products" style={{border:"2px solid #2563EB",color:"#2563EB",padding:"16px 32px",borderRadius:"999px",fontWeight:600,textDecoration:"none",display:"inline-block"}}>
               Voir nos produits
             </Link>
-          </div>
-          <div style={{display:"flex",gap:"32px",alignItems:"center"}}>
-            <div style={{textAlign:"center"}}>
-              <div style={{fontSize:"24px",fontWeight:"bold",color:"#0F172A"}}>20€</div>
-              <div style={{fontSize:"12px",color:"#64748B"}}>par carte</div>
-            </div>
-            <div style={{width:"1px",height:"40px",background:"#E2E8F0"}}></div>
-            <div style={{textAlign:"center"}}>
-              <div style={{fontSize:"24px",fontWeight:"bold",color:"#0F172A"}}>15€</div>
-              <div style={{fontSize:"12px",color:"#64748B"}}>par mois</div>
-            </div>
-            <div style={{width:"1px",height:"40px",background:"#E2E8F0"}}></div>
-            <div style={{textAlign:"center"}}>
-              <div style={{fontSize:"24px",fontWeight:"bold",color:"#0F172A"}}>0</div>
-              <div style={{fontSize:"12px",color:"#64748B"}}>réimpression</div>
-            </div>
           </div>
         </div>
         <div style={{flex:1,minWidth:"280px",display:"flex",justifyContent:"center"}}>
@@ -160,6 +142,7 @@ export default function Home() {
         </div>
       </div>
 
+      {/* PROBLEME */}
       <div style={{padding:"80px 24px",background:"white"}}>
         <div style={{maxWidth:"1152px",margin:"0 auto"}}>
           <h2 style={{fontSize:"36px",fontWeight:"bold",textAlign:"center",color:"#0F172A",marginBottom:"16px"}}>
@@ -188,7 +171,8 @@ export default function Home() {
         </div>
       </div>
 
-      <div style={{padding:"80px 24px",background:"#F8FAFC"}}>
+      {/* CAROUSEL PRODUITS */}
+      <div style={{padding:"80px 24px",background:"#F8FAFC",overflow:"hidden"}}>
         <div style={{maxWidth:"1152px",margin:"0 auto"}}>
           <span style={{display:"block",textAlign:"center",color:"#2563EB",fontWeight:600,marginBottom:"16px"}}>Nos solutions</span>
           <h2 style={{fontSize:"36px",fontWeight:"bold",textAlign:"center",color:"#0F172A",marginBottom:"16px"}}>
@@ -201,6 +185,7 @@ export default function Home() {
         </div>
       </div>
 
+      {/* COMMENT CA MARCHE */}
       <div style={{padding:"80px 24px",background:"white"}}>
         <div style={{maxWidth:"1152px",margin:"0 auto"}}>
           <h2 style={{fontSize:"36px",fontWeight:"bold",textAlign:"center",color:"#0F172A",marginBottom:"16px"}}>
@@ -230,30 +215,43 @@ export default function Home() {
         </div>
       </div>
 
-      <div style={{padding:"80px 24px",background:"#2563EB"}}>
-        <div style={{maxWidth:"1152px",margin:"0 auto",textAlign:"center",color:"white"}}>
-          <h2 style={{fontSize:"48px",fontWeight:"bold",marginBottom:"16px"}}>20€ par commercial. Par an.</h2>
-          <p style={{color:"#BFDBFE",fontSize:"18px",marginBottom:"48px",maxWidth:"560px",margin:"0 auto 48px"}}>
-            Contre plusieurs centaines d'euros en cartes papier à renouveler. Une carte TREGO ne finit jamais à la poubelle.
+      {/* CRM */}
+      <div style={{padding:"80px 24px",background:"#F8FAFC"}}>
+        <div style={{maxWidth:"1152px",margin:"0 auto"}}>
+          <span style={{display:"block",textAlign:"center",color:"#2563EB",fontWeight:600,marginBottom:"16px"}}>Dashboard TREGO</span>
+          <h2 style={{fontSize:"36px",fontWeight:"bold",textAlign:"center",color:"#0F172A",marginBottom:"16px"}}>
+            Gérez tout depuis un seul endroit
+          </h2>
+          <p style={{textAlign:"center",color:"#64748B",marginBottom:"64px",maxWidth:"672px",margin:"0 auto 64px"}}>
+            Le dashboard TREGO vous donne le contrôle total sur vos objets connectés, vos contacts et vos données en temps réel.
           </p>
-          <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(200px,1fr))",gap:"32px",maxWidth:"768px",margin:"0 auto 48px"}}>
+          <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(260px,1fr))",gap:"32px"}}>
             {[
-              {value:"20€",label:"par carte par an"},
-              {value:"15€",label:"par mois gestion et stats"},
-              {value:"0",label:"réimpression nécessaire"},
-            ].map((stat) => (
-              <div key={stat.label} style={{background:"rgba(255,255,255,0.1)",borderRadius:"16px",padding:"24px"}}>
-                <div style={{fontSize:"48px",fontWeight:"bold",marginBottom:"4px"}}>{stat.value}</div>
-                <div style={{color:"#BFDBFE",fontSize:"14px"}}>{stat.label}</div>
+              {icon:"👥",title:"Récolte de contacts",text:"Chaque scan est une opportunité. TREGO capture automatiquement les informations de vos prospects et les centralise dans votre dashboard.",color:"#DBEAFE"},
+              {icon:"🔗",title:"Export vers votre CRM",text:"Exportez vos contacts en un clic vers Salesforce, HubSpot, Notion ou tout autre CRM. Vos données vous appartiennent.",color:"#DCFCE7"},
+              {icon:"✏️",title:"Modification en temps réel",text:"Changez la destination de vos liens NFC à tout moment depuis le dashboard. Aucune carte à remplacer, aucun délai.",color:"#FEF9C3"},
+              {icon:"📊",title:"Statistiques détaillées",text:"Visualisez le nombre de scans, la localisation, le type d'appareil et l'historique complet de chaque objet connecté.",color:"#F3E8FF"},
+              {icon:"⚡",title:"Activation et désactivation",text:"Activez ou désactivez un lien en un clic. Idéal pour les campagnes temporaires ou les offres limitées dans le temps.",color:"#FFE4E6"},
+              {icon:"🏢",title:"Gestion multi-sites",text:"Gérez plusieurs équipes, plusieurs sites et plusieurs campagnes depuis un seul compte administrateur centralisé.",color:"#DBEAFE"},
+            ].map((item) => (
+              <div key={item.title} style={{background:"white",padding:"28px",borderRadius:"16px",boxShadow:"0 1px 3px rgba(0,0,0,0.08)",border:"1px solid #F1F5F9"}}>
+                <div style={{width:"48px",height:"48px",background:item.color,borderRadius:"12px",display:"flex",alignItems:"center",justifyContent:"center",fontSize:"22px",marginBottom:"16px"}}>
+                  {item.icon}
+                </div>
+                <h3 style={{fontSize:"18px",fontWeight:"bold",color:"#0F172A",marginBottom:"10px"}}>{item.title}</h3>
+                <p style={{color:"#64748B",fontSize:"14px",lineHeight:1.6}}>{item.text}</p>
               </div>
             ))}
           </div>
-          <Link href="/contact" style={{display:"inline-block",background:"white",color:"#2563EB",padding:"16px 40px",borderRadius:"999px",fontWeight:"bold",textDecoration:"none"}}>
-            Calculer mon ROI gratuitement
-          </Link>
+          <div style={{textAlign:"center",marginTop:"48px"}}>
+            <Link href="/contact" style={{display:"inline-block",background:"#2563EB",color:"white",padding:"16px 40px",borderRadius:"999px",fontWeight:"bold",textDecoration:"none",boxShadow:"0 4px 14px rgba(37,99,235,0.4)"}}>
+              Découvrir le dashboard
+            </Link>
+          </div>
         </div>
       </div>
 
+      {/* TEMOIGNAGES */}
       <div style={{padding:"80px 24px",background:"white"}}>
         <div style={{maxWidth:"1152px",margin:"0 auto"}}>
           <span style={{display:"block",textAlign:"center",color:"#2563EB",fontWeight:600,marginBottom:"16px"}}>Témoignages</span>
@@ -284,6 +282,7 @@ export default function Home() {
         </div>
       </div>
 
+      {/* FAQ */}
       <div style={{padding:"80px 24px",background:"#F8FAFC"}}>
         <div style={{maxWidth:"768px",margin:"0 auto"}}>
           <h2 style={{fontSize:"32px",fontWeight:"bold",textAlign:"center",color:"#0F172A",marginBottom:"64px"}}>
@@ -294,7 +293,7 @@ export default function Home() {
               {q:"Est-ce que ça marche sur tous les smartphones ?",a:"Oui, compatible avec tous les smartphones récents. iPhone 7+ et Android 4.4+. Un QR code de secours est toujours disponible."},
               {q:"Que se passe-t-il si je veux changer mes informations ?",a:"Vous modifiez votre contenu en temps réel depuis votre dashboard TREGO. La carte physique n'a pas besoin d'être remplacée."},
               {q:"Quel est le délai de livraison ?",a:"Les cartes sont livrées sous 5 à 7 jours ouvrés après validation de votre commande."},
-              {q:"Y a-t-il un engagement de durée ?",a:"Non, l'abonnement mensuel de 15€ est sans engagement. Vous pouvez résilier à tout moment."},
+              {q:"Y a-t-il un engagement de durée ?",a:"Non, l'abonnement mensuel est sans engagement. Vous pouvez résilier à tout moment."},
             ].map((faq) => (
               <div key={faq.q} style={{background:"white",borderRadius:"16px",padding:"24px",boxShadow:"0 1px 3px rgba(0,0,0,0.1)"}}>
                 <h3 style={{fontWeight:"bold",color:"#0F172A",marginBottom:"8px"}}>{faq.q}</h3>
@@ -305,6 +304,7 @@ export default function Home() {
         </div>
       </div>
 
+      {/* CTA FINAL */}
       <div style={{padding:"80px 24px",background:"#0F172A"}}>
         <div style={{maxWidth:"768px",margin:"0 auto",textAlign:"center",color:"white"}}>
           <h2 style={{fontSize:"36px",fontWeight:"bold",marginBottom:"16px"}}>
@@ -320,6 +320,7 @@ export default function Home() {
         </div>
       </div>
 
+      {/* WHATSAPP */}
       <a href="https://wa.me/33782174651" target="_blank" rel="noopener noreferrer" style={{position:"fixed",bottom:"24px",right:"24px",width:"56px",height:"56px",background:"#22C55E",borderRadius:"50%",display:"flex",alignItems:"center",justifyContent:"center",boxShadow:"0 4px 14px rgba(0,0,0,0.2)",zIndex:50,fontSize:"28px",textDecoration:"none"}}>
         💬
       </a>
