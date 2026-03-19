@@ -226,7 +226,7 @@ export default function Home() {
 
       {/* CRM */}
       <div style={{padding:"80px 24px",background:"#F8FAFC"}}>
-        <div style={{maxWidth:"1000px",margin:"0 auto"}}>
+        <div style={{maxWidth:"1200px",margin:"0 auto"}}>
           <span style={{display:"block",textAlign:"center",color:"#2563EB",fontWeight:600,marginBottom:"16px"}}>Dashboard TREGO</span>
           <h2 style={{fontSize:"36px",fontWeight:"bold",textAlign:"center",color:"#0F172A",marginBottom:"16px"}}>
             Gérez tout depuis un seul endroit
@@ -234,47 +234,30 @@ export default function Home() {
           <p style={{textAlign:"center",color:"#64748B",marginBottom:"64px",maxWidth:"672px",margin:"0 auto 64px"}}>
             Le dashboard TREGO vous donne le contrôle total sur vos objets connectés, vos contacts et vos données en temps réel.
           </p>
-
-          {/* Ligne 1 — 3 cartes */}
-          <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"24px",marginBottom:"24px"}}>
-            {crmFeatures.slice(0,3).map((item) => (
-              <div key={item.title} style={{background:"white",padding:"28px",borderRadius:"16px",boxShadow:"0 1px 3px rgba(0,0,0,0.08)",border:"1px solid #F1F5F9"}}>
+          <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:"24px",marginBottom:"24px"}}>
+            {crmFeatures.slice(0,4).map((item) => (
+              <div key={item.title} style={{background:"white",padding:"24px",borderRadius:"16px",boxShadow:"0 1px 3px rgba(0,0,0,0.08)",border:"1px solid #F1F5F9"}}>
                 <div style={{width:"48px",height:"48px",background:item.color,borderRadius:"12px",display:"flex",alignItems:"center",justifyContent:"center",fontSize:"22px",marginBottom:"16px"}}>
                   {item.icon}
                 </div>
-                <h3 style={{fontSize:"18px",fontWeight:"bold",color:"#0F172A",marginBottom:"10px"}}>{item.title}</h3>
-                <p style={{color:"#64748B",fontSize:"14px",lineHeight:1.6}}>{item.text}</p>
+                <h3 style={{fontSize:"16px",fontWeight:"bold",color:"#0F172A",marginBottom:"8px"}}>{item.title}</h3>
+                <p style={{color:"#64748B",fontSize:"13px",lineHeight:1.6}}>{item.text}</p>
               </div>
             ))}
           </div>
-
-          {/* Ligne 2 — 2 cartes centrées + 1 vide */}
-          <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"24px"}}>
-            <div style={{background:"transparent"}}></div>
-            {crmFeatures.slice(3,5).map((item) => (
-              <div key={item.title} style={{background:"white",padding:"28px",borderRadius:"16px",boxShadow:"0 1px 3px rgba(0,0,0,0.08)",border:"1px solid #F1F5F9"}}>
+          <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:"24px"}}>
+            <div></div>
+            {crmFeatures.slice(4,6).map((item) => (
+              <div key={item.title} style={{background:"white",padding:"24px",borderRadius:"16px",boxShadow:"0 1px 3px rgba(0,0,0,0.08)",border:"1px solid #F1F5F9"}}>
                 <div style={{width:"48px",height:"48px",background:item.color,borderRadius:"12px",display:"flex",alignItems:"center",justifyContent:"center",fontSize:"22px",marginBottom:"16px"}}>
                   {item.icon}
                 </div>
-                <h3 style={{fontSize:"18px",fontWeight:"bold",color:"#0F172A",marginBottom:"10px"}}>{item.title}</h3>
-                <p style={{color:"#64748B",fontSize:"14px",lineHeight:1.6}}>{item.text}</p>
+                <h3 style={{fontSize:"16px",fontWeight:"bold",color:"#0F172A",marginBottom:"8px"}}>{item.title}</h3>
+                <p style={{color:"#64748B",fontSize:"13px",lineHeight:1.6}}>{item.text}</p>
               </div>
             ))}
+            <div></div>
           </div>
-
-          {/* Ligne 3 — derniere carte centrée */}
-          <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"24px",marginTop:"24px"}}>
-            <div style={{background:"transparent"}}></div>
-            <div style={{background:"white",padding:"28px",borderRadius:"16px",boxShadow:"0 1px 3px rgba(0,0,0,0.08)",border:"1px solid #F1F5F9"}}>
-              <div style={{width:"48px",height:"48px",background:crmFeatures[5].color,borderRadius:"12px",display:"flex",alignItems:"center",justifyContent:"center",fontSize:"22px",marginBottom:"16px"}}>
-                {crmFeatures[5].icon}
-              </div>
-              <h3 style={{fontSize:"18px",fontWeight:"bold",color:"#0F172A",marginBottom:"10px"}}>{crmFeatures[5].title}</h3>
-              <p style={{color:"#64748B",fontSize:"14px",lineHeight:1.6}}>{crmFeatures[5].text}</p>
-            </div>
-            <div style={{background:"transparent"}}></div>
-          </div>
-
           <div style={{textAlign:"center",marginTop:"48px"}}>
             <Link href="/contact" style={{display:"inline-block",background:"#2563EB",color:"white",padding:"16px 40px",borderRadius:"999px",fontWeight:"bold",textDecoration:"none",boxShadow:"0 4px 14px rgba(37,99,235,0.4)"}}>
               Découvrir le dashboard
